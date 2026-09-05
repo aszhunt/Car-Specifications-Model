@@ -88,7 +88,7 @@ with st.sidebar:
     search_mode = st.radio("Select Category", ["Cars", "Bikes", "Supercars"])
     st.markdown("---")
     st.markdown("### 🛠️ Developer Info")
-    st.info("Fully tested and optimized for Streamlit Cloud deployment.")
+    st.info("Optimized for Python 3.14 & Streamlit Cloud.")
 
 # Main Input Section
 col1, col2, col3 = st.columns([1, 3, 1])
@@ -132,7 +132,6 @@ if search_btn and vehicle_query:
         with res_col2:
             st.markdown(f"### 📸 Showcase: {vehicle_name}")
             
-            # Safe and permanent image links matching categories
             if search_mode == "Bikes":
                 img_url = "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80"
             elif search_mode == "Supercars":
@@ -140,7 +139,7 @@ if search_btn and vehicle_query:
             else:
                 img_url = "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80"
             
-            st.image(img_url, caption=f"{vehicle_name} - Ultra-Realistic View", use_column_width=True)
+            st.image(img_url, caption=f"{vehicle_name} - Ultra-Realistic View", use_container_width=True)
             
             st.markdown("""
             <div class="spec-card" style="margin-top: 15px;">
