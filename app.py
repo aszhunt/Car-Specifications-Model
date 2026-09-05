@@ -88,7 +88,7 @@ with st.sidebar:
     search_mode = st.radio("Select Category", ["Cars", "Bikes", "Supercars"])
     st.markdown("---")
     st.markdown("### 🛠️ Developer Info")
-    st.info("Fully tested and verified compatible with Streamlit latest builds.")
+    st.info("Fully tested and optimized for Streamlit cloud deployment.")
 
 # Main Input Section
 col1, col2, col3 = st.columns([1, 3, 1])
@@ -130,8 +130,7 @@ if search_btn and vehicle_query:
 
         with res_col2:
             st.markdown("### 📸 Ultra-Realistic Visual")
-            # Safe placeholder image using high-quality Unsplash image endpoint with safe keywords
-            safe_img_url = f"https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80"
+            safe_img_url = "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80"
             if search_mode == "Bikes":
                 safe_img_url = "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80"
             
