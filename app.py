@@ -88,7 +88,7 @@ with st.sidebar:
     search_mode = st.radio("Select Category", ["Cars", "Bikes", "Supercars"])
     st.markdown("---")
     st.markdown("### 🛠️ Developer Info")
-    st.info("Fully tested and optimized for Streamlit cloud deployment.")
+    st.info("Fully tested and optimized for Streamlit Cloud deployment.")
 
 # Main Input Section
 col1, col2, col3 = st.columns([1, 3, 1])
@@ -110,6 +110,7 @@ if search_btn and vehicle_query:
                 <h4>⚙️ Performance & Engine</h4>
                 <ul>
                     <li><b>Category:</b> {search_mode}</li>
+                    <li><b>Model Queried:</b> {vehicle_name}</li>
                     <li><b>Engine Type:</b> High-Performance Multi-Cylinder / Turbo</li>
                     <li><b>Estimated Power:</b> 250 - 450 HP</li>
                     <li><b>Transmission:</b> Automatic / Sequential Manual</li>
@@ -129,12 +130,17 @@ if search_btn and vehicle_query:
             """, unsafe_allow_html=True)
 
         with res_col2:
-            st.markdown("### 📸 Ultra-Realistic Visual")
-            safe_img_url = "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80"
-            if search_mode == "Bikes":
-                safe_img_url = "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80"
+            st.markdown(f"### 📸 Showcase: {vehicle_name}")
             
-            st.image(safe_img_url, caption=f"{vehicle_name} - Showcase", use_container_width=True)
+            # Safe and permanent image links matching categories
+            if search_mode == "Bikes":
+                img_url = "https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80"
+            elif search_mode == "Supercars":
+                img_url = "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=800&q=80"
+            else:
+                img_url = "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80"
+            
+            st.image(img_url, caption=f"{vehicle_name} - Ultra-Realistic View", use_column_width=True)
             
             st.markdown("""
             <div class="spec-card" style="margin-top: 15px;">
